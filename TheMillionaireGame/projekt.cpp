@@ -70,7 +70,7 @@ void Fullscreen() {
 
 void remove_scrollbar()
 {
-    CONSOLE_SCREEN_BUFFER_INFO info;
+   CONSOLE_SCREEN_BUFFER_INFO info;
     GetConsoleScreenBufferInfo(hConsole, &info);
     COORD new_size =
     {
@@ -428,7 +428,7 @@ void FAQ(int QuestionNumber) {
 }
 int main()
 {
-    remove_scrollbar();
+   remove_scrollbar();
     Fullscreen();
     srand((unsigned int)time(NULL));
     StartOfTheProgram();
