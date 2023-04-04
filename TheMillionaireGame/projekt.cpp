@@ -13,7 +13,7 @@
 
 using namespace std;
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-// Globalne zmienne
+
 char SelectCategory;
 string name, leader = "Prowadzacy";
 int CorrectAnswer = 0, MonetaryThreshold = 1, tab[12];
@@ -22,7 +22,7 @@ string Question, AnswerA, AnswerB, AnswerD, AnswerC, Answer;
 string Money[13] = { "0", "500", "1 000", "2 000", "5 000", "10 000", "20 000", "40 000", "75 000", "125 000", "250 000", "500 000", "1 000 000" };
 bool  PublicOpinionIsReady = true, FiftyToFiftyIsReady = true, PhoneToFriendIsReady = true;
 
-////// TXT COLOR////
+
 void OliveColor() {
     SetConsoleTextAttribute(hConsole, 6);
 }
@@ -33,7 +33,7 @@ void YellowColor() {
     SetConsoleTextAttribute(hConsole, 14);
 }
 
-///////Centrowanie Tresci/////
+
 void CenterString(char const* s)
 {
     HANDLE hOut;
@@ -62,12 +62,12 @@ void OneQuarterString(char const* s)
     cout << s;
 }
 
-////////Fullscreen////
+
 void Fullscreen() {
     ::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
 }
 
-////remove scrollbar////
+
 void remove_scrollbar()
 {
     CONSOLE_SCREEN_BUFFER_INFO info;
@@ -80,7 +80,7 @@ void remove_scrollbar()
     SetConsoleScreenBufferSize(hConsole, new_size);
 }
 
-////Przywitanie prowadzacego////
+
 void StartOfTheProgram()
 {
     cout << endl << endl << endl << endl;
@@ -161,7 +161,7 @@ void SelectQuestion()
     if (plik.good() == true)
     {
         int RandomNumber, pom = 0;
-        //For ¿eby nie powtarza³y sie pytania
+   
         for (int x = 0; x != -1; x++) {
             RandomNumber = rand() % 20;
             for (int x = 0; x != 12; x++)
